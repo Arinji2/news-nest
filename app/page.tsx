@@ -1,19 +1,23 @@
 import Image from "next/image";
 
 import Card from "./Article";
-import { getDate } from "@/utils/helperFunctions";
+import { getCurrentDate, getPrevDate } from "@/utils/helperFunctions";
 export const metadata = {
   title: "News Nest",
   description: "Discover. Explore. Stay Informed.",
 };
 export default async function Home() {
   const handleDataFetch = async () => {
-    const date = getDate();
+    const date = getCurrentDate();
+    const prev = getPrevDate();
+
     const res = await fetch(
-      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&sources=cnn,bbc&sort=popularity&date=${date}`,
+      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&sources=ndtv,cnn&date=${prev},${date}`,
       { next: { revalidate: 3600 } }
     );
+
     const data = await res.json();
+
     return data;
   };
   const dataJSON = await handleDataFetch();

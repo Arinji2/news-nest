@@ -18,7 +18,7 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
         }absolute transition-all duration-300 ease-in-out group-hover:scale-125 `}
       />
       <div className="absolute h-full w-full bg-black opacity-50"></div>
-      <h1 className="z-10 ml-2 mr-2 line-clamp-2 text-[30px] font-bold text-white">
+      <h1 className="z-10 ml-2 mr-2 line-clamp-2 text-[12px] font-bold text-white md:text-[15px]">
         {headline}
       </h1>
       <h2 className="z-10 mb-5 ml-2 mr-2  line-clamp-1 text-[20px] font-medium text-[#FF5858]">

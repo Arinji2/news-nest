@@ -43,30 +43,29 @@ export default function RootLayout({
                   height={150}
                   alt="Logo"
                   className="object-fit "
+                  onClick={() => setNav(!nav)}
                 />
               </Link>
               <FontAwesomeIcon
                 icon={faBars as IconProp}
                 className="absolute right-5 block h-[40px] w-[40px] text-white md:hidden"
-                onClick={() => {
-                  setNav(!nav);
-                }}
+                onClick={() => setNav(!nav)}
               />
             </div>
             <div className="mt-20 flex h-fit w-full flex-col items-center justify-center gap-20">
-              <Link href={"/discover"}>
+              <Link href={"/discover"} onClick={() => setNav(!nav)}>
                 <div className="group flex w-fit flex-col items-center justify-center text-[35px] font-medium text-white hover:cursor-pointer">
                   Discover
                   <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
                 </div>
               </Link>
-              <Link href={"/explore"}>
+              <Link href={"/explore"} onClick={() => setNav(!nav)}>
                 <div className="group flex w-fit flex-col items-center justify-center text-[35px] font-medium text-white hover:cursor-pointer">
                   Explore
                   <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
                 </div>
               </Link>
-              <Link href={"/informed"}>
+              <Link href={"/informed"} onClick={() => setNav(!nav)}>
                 <div className="group flex w-fit flex-col items-center justify-center text-[35px] font-medium text-white hover:cursor-pointer">
                   Informed
                   <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
