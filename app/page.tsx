@@ -2,7 +2,10 @@ import Image from "next/image";
 
 import Card from "./Article";
 import { getDate } from "@/utils/helperFunctions";
-
+export const metadata = {
+  title: "News Nest",
+  description: "Discover. Explore. Stay Informed.",
+};
 export default async function Home() {
   const handleDataFetch = async () => {
     const date = getDate();
