@@ -7,7 +7,7 @@ export default async function Home() {
   const handleDataFetch = async () => {
     const date = getDate();
     const res = await fetch(
-      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIAKIT_API}&limit=3&sources=cnn,bbc&sort=popularity&date=${date}`,
+      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&sources=cnn,bbc&sort=popularity&date=${date}`,
       { next: { revalidate: 3600 } }
     );
     const data = await res.json();
