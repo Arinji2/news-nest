@@ -43,7 +43,7 @@ export default async function Home() {
         <h1 className="mt-10 text-center text-[50px] font-bold text-red md:text-[90px]">
           Live News
         </h1>
-        <div className="mb-5 flex h-full w-full flex-row items-center justify-evenly">
+        <div className="mb-5 flex h-full w-full shrink-0 flex-row flex-wrap items-center justify-evenly gap-y-5">
           <Card
             headline={dataJSON.data[0].title}
             image={dataJSON.data[0].image}

@@ -7,7 +7,7 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
   return (
     <Link
       href={url}
-      className="group relative flex h-[300px] w-[90vw] flex-col items-start justify-end gap-5 overflow-hidden rounded-lg md:h-[480px] md:w-[380px]"
+      className="group relative flex h-[300px] w-[90vw] shrink-0 flex-col items-start justify-end gap-5 overflow-hidden rounded-lg md:h-[480px] md:w-[380px]"
     >
       <Image
         src={image !== null ? image : "/logo.svg"}
