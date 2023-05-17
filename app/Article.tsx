@@ -22,8 +22,10 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
         alt={headline}
         fill
         className={`${
-          image !== null ? "object-cover " : "object-contain "
-        }absolute transition-all duration-300 ease-in-out group-hover:scale-125 `}
+          image !== null
+            ? "object-cover  group-hover:scale-125"
+            : "object-contain "
+        }absolute transition-all duration-300 ease-in-out `}
         quality={100}
       />
       <div className="absolute h-full w-full bg-black opacity-50"></div>
