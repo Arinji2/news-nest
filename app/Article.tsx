@@ -4,6 +4,7 @@ import type { Article } from "../utils/types";
 import Link from "next/link";
 
 const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
+  headline = headline.replace(/&#039;/g, "'");
   return (
     <Link
       href={url}
@@ -16,6 +17,7 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
         className={`${
           image !== null ? "object-cover " : "object-contain "
         }absolute transition-all duration-300 ease-in-out group-hover:scale-125 `}
+        quality={100}
       />
       <div className="absolute h-full w-full bg-black opacity-50"></div>
       <h1 className="z-10 ml-2 mr-2 line-clamp-2 text-[12px] font-bold text-white md:text-[15px]">

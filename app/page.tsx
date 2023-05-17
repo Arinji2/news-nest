@@ -12,7 +12,7 @@ export default async function Home() {
     const prev = getPrevDate();
 
     const res = await fetch(
-      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&sources=ndtv,cnn&date=${prev},${date}`,
+      `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&countries=in&date=${prev},${date}&sort=published_desc`,
       { next: { revalidate: 180 } }
     );
 

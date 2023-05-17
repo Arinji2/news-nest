@@ -9,7 +9,7 @@ interface CountryCardProps {
 const CountryCard = ({ name, image }: CountryCardProps) => {
   return (
     <Link
-      href={`/explore/${name.toLowerCase().replace(" ", "-")}`}
+      href={`/country/${name.toLowerCase().replace(" ", "-")}`}
       className="group relative flex h-[350px] w-[250px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-lg hover:cursor-pointer md:h-[400px] md:w-[300px]"
     >
       <Image

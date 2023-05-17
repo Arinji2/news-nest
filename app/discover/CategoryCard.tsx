@@ -10,7 +10,7 @@ interface CategoryCardProps {
 const CategoryCard = ({ name, image, index }: CategoryCardProps) => {
   return (
     <Link
-      href={`/explore/${name.toLowerCase().replace(" ", "-")}`}
+      href={`/category/${name.toLowerCase().replace(" ", "-")}`}
       className="group relative flex h-[200px] w-[90vw] shrink-0 flex-col items-center justify-start overflow-hidden rounded-lg text-center hover:cursor-pointer md:h-[300px] md:items-start"
     >
       <Image

@@ -1,11 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import CountryCard from "./CountryCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faSearch } from "@fortawesome/fontawesome-free-solid";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import CategoryCard from "./CategoryCard";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Page() {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
   return (
     <div className="h-fit w-full">
       <div className="flex h-[100svh] w-full flex-col items-center justify-center">
@@ -17,10 +24,13 @@ function Page() {
           className="absolute -z-10 object-cover"
           quality={100}
         />
-        <div className="absolute h-full w-full bg-black opacity-50 "></div>
+        <div className="absolute h-full w-full bg-black opacity-70 "></div>
         <h1 className="z-10 text-center text-[70px] font-bold text-white md:text-[120px]">
           Discover
         </h1>
+        <h3 className="z-10 text-[20px] font-light text-[#FFFFFF] md:text-[30px]">
+          Discover New News Sources
+        </h3>
       </div>
       <div className="flex h-fit w-full flex-col items-center justify-start bg-black ">
         <h1 className="mt-10 text-center text-[50px] font-bold text-red md:text-[90px]">
@@ -30,12 +40,15 @@ function Page() {
           <CountryCard name="India" image="/discover/india.png" />
           <CountryCard name="United States" image="/discover/usa.png" />
           <CountryCard name="United Kingdom" image="/discover/uk.png" />
-          <div className="group flex h-[350px] w-[60px] flex-col items-center justify-center rounded-lg bg-red transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-white md:h-[400px]">
+          <Link
+            href="/explore"
+            className="group flex h-[350px] w-[60px] flex-col items-center justify-center rounded-lg bg-red transition-all duration-300 ease-in-out hover:cursor-pointer hover:bg-white md:h-[400px]"
+          >
             <FontAwesomeIcon
               icon={faPlus as IconProp}
               className="h-[40px] w-[40px] text-white transition-all duration-300 ease-in-out group-hover:text-red"
             />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="flex h-fit w-full flex-col items-center justify-start bg-black md:h-[40vh] ">
@@ -47,9 +60,16 @@ function Page() {
             className="m-3 h-[40px] w-[90%]   bg-black p-1 text-[20px] font-medium text-white outline-none md:p-3 md:text-[30px]"
             type="text"
             placeholder="Explore the World..."
+            onChange={(e) => {
+              const letter = e.target.value.toLowerCase().replace(" ", "-");
+              setSearch(letter);
+            }}
           />
           <FontAwesomeIcon
             icon={faSearch as IconProp}
+            onClick={() => {
+              router.push(`/search/${search}`);
+            }}
             className="mr-3 h-[20px] w-[20px] text-red md:h-[40px] md:w-[40px]"
           />
         </div>
