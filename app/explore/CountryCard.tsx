@@ -12,7 +12,7 @@ const CountryCard = ({ name, image, index }: CountryCardProps) => {
   if (index === 0) black = false;
   return (
     <Link
-      href={`/country/${name.toLowerCase().replace(" ", "-")}`}
+      href={`/country?name=${name.replace(" ", "-")}`}
       className={`${
         black ? "bg-[#000000] " : "bg-red "
       } group relative flex h-[170px] w-[170px] shrink-0 flex-col items-center justify-start gap-10 overflow-hidden rounded-lg  hover:cursor-pointer`}

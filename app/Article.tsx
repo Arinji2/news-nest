@@ -5,6 +5,13 @@ import Link from "next/link";
 
 const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
   headline = headline.replace(/&#039;/g, "'");
+  if (newsGroup === null) newsGroup = "Unknown";
+  //convert image links of http to https
+  if (image !== null) {
+    if (image.startsWith("http://")) {
+      image = image.replace("http://", "https://");
+    }
+  }
   return (
     <Link
       href={url}
