@@ -68,7 +68,7 @@ function Page() {
           <FontAwesomeIcon
             icon={faSearch as IconProp}
             onClick={() => {
-              router.push(`/search/${search}`);
+              router.push(`/search?keywords=${search}`);
             }}
             className="mr-3 h-[20px] w-[20px] text-red md:h-[40px] md:w-[40px]"
           />

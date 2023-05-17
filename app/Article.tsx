@@ -23,7 +23,7 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
         fill
         className={`${
           image !== null
-            ? "object-cover  group-hover:scale-125"
+            ? "object-cover  group-hover:scale-125 "
             : "object-contain "
         }absolute transition-all duration-300 ease-in-out `}
         quality={100}
