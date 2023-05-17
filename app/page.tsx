@@ -13,7 +13,7 @@ export default async function Home() {
 
     const res = await fetch(
       `http://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API}&limit=3&sources=ndtv,cnn&date=${prev},${date}`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 180 } }
     );
 
     const data = await res.json();
