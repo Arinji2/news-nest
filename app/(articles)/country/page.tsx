@@ -28,6 +28,7 @@ export default async function Page({
             image={article.image}
             url={article.url}
             newsGroup={article.author}
+            key={article.url}
           />
         ))}
       </div>
