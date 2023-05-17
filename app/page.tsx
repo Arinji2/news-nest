@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Card from "./Article";
 import { getCurrentDate, getPrevDate } from "@/utils/helperFunctions";
+import Link from "next/link";
 export const metadata = {
   title: "News Nest",
   description: "Discover. Explore. Stay Informed.",
@@ -39,9 +40,12 @@ export default async function Home() {
         <h3 className="text-[20px] font-light text-[#FFFFFF] md:text-[30px]">
           Discover. Explore. Stay Informed.
         </h3>
-        <p className="absolute bottom-10 bg-red p-3 text-[20px] font-bold">
-          Start Exploring
-        </p>
+        <Link
+          href="/discover"
+          className="absolute bottom-10 border-4 border-red bg-red p-3 text-[20px] font-bold transition-all duration-300 ease-in-out hover:bg-white hover:text-red"
+        >
+          Start Discovering
+        </Link>
       </div>
       <div className="bg flex h-fit w-full flex-col items-center justify-start bg-black">
         <h1 className="mt-10 text-center text-[50px] font-bold text-red md:text-[90px]">

@@ -34,3 +34,17 @@ export const getCountryCode = (country: string) => {
   else if (country === "United-States") code = "us";
   return code;
 };
+
+export const getLanguageCode = (language: string) => {
+  var code = "en";
+  if (language === "English") code = "en";
+  else if (language === "Arabic") code = "ar";
+  else if (language === "German") code = "de";
+  else if (language === "Spanish") code = "es";
+  else if (language === "French") code = "fr";
+  else if (language === "Italian") code = "it";
+  else if (language === "Russian") code = "ru";
+  else if (language === "Chinese") code = "zh";
+
+  return code;
+};
