@@ -65,17 +65,17 @@ export default function RootLayout({
                   <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
                 </div>
               </Link>
-              <Link href={"/informed"} onClick={() => setNav(!nav)}>
+              <Link href={"/creator"} onClick={() => setNav(!nav)}>
                 <div className="group flex w-fit flex-col items-center justify-center text-[35px] font-medium text-white hover:cursor-pointer">
-                  Informed
+                  Creator
                   <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
                 </div>
               </Link>
               <Link
-                href={"/login"}
+                href={"/discover"}
                 className="absolute bottom-5 border-2 border-red bg-red p-3 pl-5 pr-5 text-[20px] font-bold text-white transition-all duration-500 ease-in-out hover:cursor-pointer hover:bg-white hover:text-red"
               >
-                Login
+                Discover
               </Link>
             </div>
           </div>
@@ -120,19 +120,19 @@ export default function RootLayout({
                 <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
               </div>
             </Link>
-            <Link href={"/informed"}>
+            <Link href={"/creator"}>
               <div className="group flex w-fit flex-col items-center justify-center text-[35px] font-medium text-white hover:cursor-pointer">
-                Informed
+                Creator
                 <div className="h-[4px] w-full origin-left scale-x-0 bg-transparent transition-all duration-500 ease-in-out group-hover:scale-x-100 group-hover:bg-white"></div>
               </div>
             </Link>
           </div>
           <div className="hidden h-full w-[20%] flex-col items-center justify-center md:flex">
             <Link
-              href={"/login"}
+              href={"/discover"}
               className=" border-2 border-red bg-red p-3 pl-5 pr-5 text-[20px] font-bold text-white transition-all duration-500 ease-in-out hover:cursor-pointer hover:bg-white hover:text-red"
             >
-              Login
+              Discover
             </Link>
           </div>
         </div>

@@ -18,11 +18,11 @@ const Card: FC<Article> = ({ headline, image, newsGroup, url }) => {
       className="group relative flex h-[300px] w-[90vw] shrink-0 flex-col items-start justify-end gap-5 overflow-hidden rounded-lg md:h-[480px] md:w-[380px]"
     >
       <Image
-        src={image !== null ? image : "/logo.svg"}
+        src={image !== null && image.startsWith("http") ? image : "/logo.svg"}
         alt={headline}
         fill
         className={`${
-          image !== null
+          image !== null && image.startsWith("http")
             ? "object-cover  group-hover:scale-125 "
             : "object-contain "
         }absolute transition-all duration-300 ease-in-out `}
