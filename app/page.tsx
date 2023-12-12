@@ -10,18 +10,18 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <div className="w-full h-fit md:h-page bg-background flex flex-col items-center justify-center">
+    <div className="w-full h-page bg-background flex flex-col items-center justify-center">
       <WidthWrapper color="#" transparent>
         <div className="w-full h-fit flex flex-col md:flex-row gap-8 items-center justify-center mt-3 xl:mt-0">
           <div className="w-full h-fit flex flex-col items-center xl:items-start justify-center gap-6">
             <div className="w-fit h-fit flex flex-col items-center xl:items-start justify-center">
-              <h1 className="text-text md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
+              <h1 className="text-text text-center md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
                 Discover.
               </h1>
-              <h1 className="text-text md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
+              <h1 className="text-text text-center md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
                 Explore.
               </h1>
-              <h1 className="text-text md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
+              <h1 className="text-text text-center md:text-tabletH1 text-mobileH1 xl:text-h1 -m-3">
                 Stay Informed.
               </h1>
             </div>
