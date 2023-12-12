@@ -8,6 +8,14 @@ import { useState } from "react";
 export default function MobNavbar() {
   const [active, setActive] = useState(false);
 
+  React.useEffect(() => {
+    if (active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [active]);
+
   return (
     <>
       <div className=" xl:hidden flex   flex-row items-center justify-between gap-2 w-full h-full">

@@ -15,7 +15,7 @@ export default function Navbar() {
     });
   }, []);
   return (
-    <nav className="w-full h-[100px] overflow-hidden bg-background border-b-2 border-secondary">
+    <nav className="w-full h-[100px] sticky z-10 overflow-hidden bg-background border-b-2 border-secondary">
       <WidthWrapper color="#" transparent>
         <PcNavbar />
         <MobNavbar />
