@@ -13,7 +13,7 @@ export default function Button({
   return (
     <button
       className={cn(
-        "px-4 py-3 text-center  border-2 hover:text-secondary will-change-auto transition-colors ease-linear duration-150 border-secondary hover:bg-white bg-secondary   text-text",
+        "px-4 py-3 text-center text-button border-2 hover:text-secondary will-change-auto transition-colors ease-linear duration-150 border-secondary hover:bg-white bg-secondary   ",
         {
           "bg-text": inverse,
           "text-secondary  border-secondary": inverse,
@@ -23,7 +23,7 @@ export default function Button({
       )}
       {...props}
     >
-      <p className="text-button">{children}</p>
+      {children}
     </button>
   );
 }
