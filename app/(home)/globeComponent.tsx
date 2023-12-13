@@ -47,7 +47,7 @@ const GlobeComponent = () => {
 
   return (
     <div
-      className="h-[700px] flex flex-col items-center justify-center overflow-visible min-w-[400px] aspect-video"
+      className="h-full overflow-hidden w-full xl:h-[700px] flex flex-col items-center justify-center no-scrollbar xl:overflow-visible xl:min-w-[400px] aspect-video"
       ref={containerRef}
     ></div>
   );
