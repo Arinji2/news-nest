@@ -6,6 +6,7 @@ import Link from "next/link";
 import Hero from "./(home)/hero";
 import Live from "./(home)/live";
 import Discover from "./(home)/discover";
+import Explore from "./(home)/explore";
 export const metadata = {
   title: "News Nest",
   description: "Discover. Explore. Stay Informed.",
@@ -23,6 +24,9 @@ export default async function Home() {
         </WidthWrapper>
         <WidthWrapper color="#8A1838">
           <Discover />
+        </WidthWrapper>
+        <WidthWrapper color="#" transparent>
+          <Explore />
         </WidthWrapper>
       </div>
     </div>
