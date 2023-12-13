@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Explore() {
   return (
-    <section className="w-full h-full md:h-page  py-10 flex flex-col overflow-hidden items-center justify-center relative">
+    <section className="w-full h-full xl:h-page  py-10 flex flex-col overflow-hidden items-center justify-center relative">
       <Image
         src="/home/explore.png"
         fill
@@ -18,9 +18,9 @@ export default function Explore() {
           <Card name="Usa" pop={340} unit="M" />
           <Card name="Russia" pop={143} unit="M" />
         </div>
-        <div className="w-full h-fit flex flex-col items-center xl:items-start justify-center gap-4">
+        <div className="w-full h-fit flex flex-col items-start md:items-center xl:items-start justify-center gap-4">
           <h2 className="text-h2 text-primary">EXPLORE</h2>
-          <h3 className="text-subtitle text-text text-center xl:text-left">
+          <h3 className="text-subtitle text-text text-left md:text-center xl:text-left">
             Explore countries and their{" "}
             <br className="xl:inline-block hidden" /> worlds.
           </h3>
