@@ -11,7 +11,7 @@ export default function Explore() {
         alt="Map"
         className="absolute top-0 left-0 object-contain"
       />
-      <div className="w-full h-full flex flex-col-reverse xl:flex-row items-center justify-center gap-6 md:gap-10 z-10">
+      <div className="w-full h-full flex flex-col-reverse xl:flex-row items-center justify-center gap-4 md:gap-10 z-10">
         <div className="w-full h-full flex flex-col items-center justify-center gap-4">
           <Card name="India" pop={1.42} unit="B" />
           <Card name="China" pop={1.41} unit="B" />
@@ -41,14 +41,14 @@ function Card({
   unit: string;
 }) {
   return (
-    <article className="bg-[#727272] bg-opacity-20 w-full xl:min-w-[700px] px-6 md:py-0 py-6 h-[300px] md:h-[120px] flex flex-col md:flex-row items-center justify-end gap-10">
+    <article className="bg-[#727272] bg-opacity-20 w-full xl:min-w-[700px] px-6 md:py-0 py-6 h-[300px] md:h-[120px] flex flex-col md:flex-row items-center justify-end gap-4 md:gap-10">
       <div className="w-full flex flex-col items-center md:items-end justify-center ">
         <p className="text-center md:text-right text-h2 uppercase text-text">
           {name}
         </p>
       </div>
       <div className="md:hidden block h-2px w-[80%] border-2 border-white border-dashed"></div>
-      <div className="w-full md:w-[60%] h-full flex flex-col md:flex-row items-center justify-end gap-8">
+      <div className="w-full md:w-[60%] h-full flex flex-col md:flex-row items-center justify-end gap-4 md:gap-8">
         <div className="md:block hidden h-[80%] w-[2px] border-2 border-white border-dashed"></div>
         <div className="w-fit h-full flex flex-row items-center justify-center gap-2">
           <p className="text-text text-subtitle">POPULATION:</p>
