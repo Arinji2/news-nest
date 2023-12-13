@@ -10,13 +10,20 @@ import { cn } from "@/utils/cn";
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
-  //hide navbar on scroll down
+
   useEffect(() => {
     let prevScrollpos = window.scrollY;
     window.onscroll = function () {
       let currentScrollPos = window.scrollY;
       if (currentScrollPos < 100) return;
-      if (prevScrollpos > currentScrollPos) setShowNavbar(true);
+      //show navbar at end of page
+
+      if (
+        window.innerHeight + Math.round(window.scrollY) + 1 >=
+        document.body.offsetHeight
+      )
+        setShowNavbar(true);
+      else if (prevScrollpos > currentScrollPos) setShowNavbar(true);
       else setShowNavbar(false);
       prevScrollpos = currentScrollPos;
     };
