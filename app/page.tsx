@@ -34,12 +34,12 @@ export default async function Home() {
           <Image
             src="/home/footer.png"
             fill
-            className="object-cover absolute"
+            className="object-cover absolute object-center "
             alt="Fighter Plane taking off"
             sizes="100vw"
             quality={50}
           />
-          <div className="w-full h-full bg-background bg-opacity-80 backdrop-blur-[5px] absolute top-0 left-0 z-10"></div>
+          <div className="w-full h-full bg-background bg-opacity-95 xl:bg-opacity-80 xl:backdrop-blur-[5px] absolute top-0 left-0 z-10"></div>
           <WidthWrapper color="#" transparent>
             <Footer />
           </WidthWrapper>
