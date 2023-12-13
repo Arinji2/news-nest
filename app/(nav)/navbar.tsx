@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "w-full h-[100px] sticky top-0 z-10 overflow-hidden transition-all ease-menu-ease duration-500 bg-background border-b-2 border-secondary",
+        "w-full h-[100px] sticky top-0 z-[500] overflow-hidden transition-all ease-menu-ease duration-500 bg-background border-b-2 border-secondary",
         {
           "-translate-y-full": !showNavbar,
         }

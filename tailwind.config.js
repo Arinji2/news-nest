@@ -30,6 +30,15 @@ module.exports = {
         body: ["16px", { fontWeight: "500" }],
         button: ["16px", { letterSpacing: "-0.02em", fontWeight: "700" }],
       },
+      animation: {
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [],

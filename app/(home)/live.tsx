@@ -6,7 +6,7 @@ export default function Live() {
     <section className="w-full h-full xl:py-0 py-10 xl:h-page flex flex-col items-center justify-center">
       <div className="w-full h-full flex flex-col xl:flex-row items-center justify-center gap-8">
         <div className="w-full h-fit flex flex-col items-center xl:items-start justify-center gap-4">
-          <h2 className="text-h2 text-primary">LIVE NEWS</h2>
+          <h2 className="text-h2 text-primary">LIVE</h2>
           <h3 className="text-subtitle text-text xl:text-left text-center">
             View the most recent news articles, <br /> worldwide
           </h3>

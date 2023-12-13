@@ -16,8 +16,8 @@ export default function Button({
         "px-4 py-3 text-center text-text border-2 hover:text-secondary will-change-auto transition-colors ease-linear duration-150 border-secondary hover:bg-white bg-secondary   ",
         className,
         {
-          "bg-text": inverse,
-          "text-secondary  border-secondary": inverse,
+          " text-text hover:bg-text  bg-transparent  border-text": inverse,
+
           "bg-transparent border-transparent hover:border-b-white hover:bg-transparent hover:text-white":
             textOnly,
         }
