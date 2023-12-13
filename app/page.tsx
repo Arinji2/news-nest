@@ -7,6 +7,7 @@ import Hero from "./(home)/hero";
 import Live from "./(home)/live";
 import Discover from "./(home)/discover";
 import Explore from "./(home)/explore";
+import Footer from "./(home)/footer";
 export const metadata = {
   title: "News Nest",
   description: "Discover. Explore. Stay Informed.",
@@ -27,6 +28,9 @@ export default async function Home() {
         </WidthWrapper>
         <WidthWrapper color="#" transparent>
           <Explore />
+        </WidthWrapper>
+        <WidthWrapper color="#" transparent>
+          <Footer />
         </WidthWrapper>
       </div>
     </div>

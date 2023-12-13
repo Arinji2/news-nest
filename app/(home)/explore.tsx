@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Explore() {
   return (
-    <section className="w-full h-full xl:h-page  py-10 flex flex-col overflow-hidden items-center justify-center relative">
+    <section className="w-full h-full xl:h-fit  py-10 flex flex-col overflow-hidden items-center justify-center relative">
       <Image
         src="/home/explore.png"
         fill
