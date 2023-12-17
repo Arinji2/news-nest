@@ -1,4 +1,4 @@
-import Article from "@/components/article";
+import { HeroArticle } from "@/components/article";
 import Button from "@/components/button";
 
 export default function Live() {
@@ -13,14 +13,14 @@ export default function Live() {
           <Button>VIEW MORE</Button>
         </div>
         <div className="w-full h-fit flex flex-row items-center justify-center gap-x-0  md:gap-x-4 gap-4">
-          <Article
+          <HeroArticle
             image="/home/live-1.png"
             title="SpaceX poised for second launch of mega Starship Rocket"
             source="The Economic Times"
             link="https://economictimes.indiatimes.com/news/science/spacex-poised-for-second-launch-of-mega-starship-rocket/articleshow/105303222.cms"
           />
 
-          <Article
+          <HeroArticle
             className={"md:flex hidden"}
             image="/home/live-2.png"
             title='Biden says Israel "starting to lose support"'
