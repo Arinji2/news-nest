@@ -2,6 +2,7 @@
 import Button from "@/components/button";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import Link from "next/link";
 import * as React from "react";
 import { useState } from "react";
 
@@ -61,9 +62,11 @@ export default function MobNavbar() {
       >
         <div className="h-[calc(100%-100px)] w-[90%] flex flex-col items-start justify-end py-5 gap-6">
           <div className="w-full h-fit flex flex-col items-start justify-center gap-4">
-            <p className="text-text text-h2">
-              LIVE<span className="text-accent">.</span>
-            </p>
+            <Link href="/live" className="w-fit h-fit">
+              <p className="text-text text-h2">
+                LIVE<span className="text-accent">.</span>
+              </p>
+            </Link>
             <p className="text-text text-h2">
               DISCOVER<span className="text-accent">.</span>
             </p>

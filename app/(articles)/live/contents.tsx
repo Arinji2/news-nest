@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import GetNextLiveArticles from "./getNext";
+import GetNextArticles from "../getNext";
 
 export default function Content({
   serverData,
@@ -24,7 +24,7 @@ export default function Content({
   useEffect(() => {
     if (loading || !inView) return;
     setLoading(true);
-    GetNextLiveArticles(page + 1, totalPages).then((res) => {
+    GetNextArticles(page + 1, totalPages, "live").then((res) => {
       if (!res) {
         setEnd(true);
         return;
@@ -34,13 +34,16 @@ export default function Content({
       setLoading(false);
       setPage((prev) => prev + 1);
     });
-  }, [inView]);
+  }, [inView, loading, page, totalPages]);
 
   return (
     <>
       <div className="w-full flex flex-row items-center justify-center gap-6 flex-wrap pb-5">
         {articles.map((item) => {
-          if (item) return <NewsArticle key={item.id} newsProps={item} />;
+          if (item)
+            return (
+              <NewsArticle category="live" key={item.id} newsProps={item} />
+            );
         })}
       </div>
       {

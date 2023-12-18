@@ -24,7 +24,14 @@ export default async function Related({
         <h2 className="text-h2 text-text text-center">RELATED ARTICLES</h2>
         <div className="w-full h-full flex flex-wrap flex-row items-center justify-center gap-6 ">
           {parsedData.map((item) => (
-            <NewsArticle info={categoryName} newsProps={item} key={item.id} />
+            <NewsArticle
+              hideIcons
+              link={`/${categoryName}/${item.id}`}
+              category={categoryName}
+              className="md:w-[525px] h-[30svh] md:h-[300px] "
+              newsProps={item}
+              key={item.id}
+            />
           ))}
         </div>
       </WidthWrapper>

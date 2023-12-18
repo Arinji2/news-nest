@@ -1,14 +1,17 @@
 import Button from "@/components/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PcNavbar() {
   return (
     <div className=" xl:flex hidden   flex-row items-center justify-center gap-2 w-full h-full">
       <Image width={172} height={95} src="/logo.svg" alt="Logo Image"></Image>
       <div className="w-full h-full flex flex-row items-center justify-center gap-[50px]">
-        <p className="text-text  text-h3">
-          LIVE<span className="text-accent">.</span>
-        </p>
+        <Link href="/live" className="w-fit h-fit">
+          <p className="text-text  text-h3">
+            LIVE<span className="text-accent">.</span>
+          </p>
+        </Link>
         <p className="text-text  text-h3">
           DISCOVER<span className="text-accent">.</span>
         </p>
