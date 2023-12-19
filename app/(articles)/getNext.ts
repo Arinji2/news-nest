@@ -1,4 +1,5 @@
 "use server";
+import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemSchema } from "@/utils/schemas";
 import Pocketbase from "pocketbase";
 export default async function GetNextArticles(
@@ -6,8 +7,7 @@ export default async function GetNextArticles(
   totalPages: number,
   category: string
 ) {
-  const pb = new Pocketbase("https://db-news.arinji.com/");
-
+  const pb = InitPocketbase();
   if (currentPage > totalPages) return;
 
   const data = await pb.collection(category).getList(currentPage, 5);

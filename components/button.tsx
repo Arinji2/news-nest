@@ -22,9 +22,10 @@ export default function Button({
             textOnly,
         }
       )}
+      style={{ fontSize: "16px", letterSpacing: "-0.02em", fontWeight: 700 }}
       {...props}
     >
-      <p className="text-button ">{children}</p>
+      {children}
     </button>
   );
 }

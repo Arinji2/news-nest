@@ -1,9 +1,9 @@
-import { NewsItemSchema } from "@/utils/schemas";
-import Pocketbase from "pocketbase";
-import Content from "./contents";
 import WidthWrapper from "@/components/WidthWrapper";
+import { InitPocketbase } from "@/utils/pocketbase";
+import { NewsItemSchema } from "@/utils/schemas";
+import Content from "./contents";
 export default async function Page() {
-  const pb = new Pocketbase("https://db-news.arinji.com/");
+  const pb = InitPocketbase();
   const data = await pb.collection("live").getList(1, 5);
 
   const totalPages = data.totalPages;

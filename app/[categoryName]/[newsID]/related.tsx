@@ -1,8 +1,7 @@
 import WidthWrapper from "@/components/WidthWrapper";
 import { NewsArticle } from "@/components/article";
+import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemsSchema } from "@/utils/schemas";
-import Image from "next/image";
-import Pocketbase from "pocketbase";
 
 export default async function Related({
   categoryName,
@@ -11,7 +10,7 @@ export default async function Related({
   categoryName: string;
   newsID: string;
 }) {
-  const pb = new Pocketbase("https://db-news.arinji.com/");
+  const pb = InitPocketbase();
 
   const data = await pb.collection(categoryName as string).getList(1, 2, {
     filter: `id != "${newsID}"`,

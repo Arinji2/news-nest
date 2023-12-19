@@ -1,11 +1,11 @@
+import WidthWrapper from "@/components/WidthWrapper";
 import Button from "@/components/button";
+import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemSchema } from "@/utils/schemas";
 import { NewsItemType } from "@/utils/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Pocketbase from "pocketbase";
 import Related from "./related";
-import WidthWrapper from "@/components/WidthWrapper";
 
 export default async function Page({
   params,
@@ -14,7 +14,7 @@ export default async function Page({
 }) {
   if (!params.categoryName || !params.newsID) notFound();
   let articleData = {} as NewsItemType;
-  const pb = new Pocketbase("https://db-news.arinji.com/");
+  const pb = InitPocketbase();
   try {
     const data = await pb.collection(params.categoryName).getOne(params.newsID);
     const parsedData = NewsItemSchema.parse(data);

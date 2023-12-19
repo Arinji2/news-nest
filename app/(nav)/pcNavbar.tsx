@@ -1,6 +1,7 @@
 import Button from "@/components/button";
 import Image from "next/image";
 import Link from "next/link";
+import { LoginButton } from "./buttons";
 
 export default function PcNavbar() {
   return (
@@ -20,7 +21,7 @@ export default function PcNavbar() {
         </p>
       </div>
       <div className="w-fit h-full shrink-0 gap-3 flex flex-row items-center justify-center">
-        <Button textOnly>LOGIN</Button>
+        <LoginButton />
         <Button>GET STARTED</Button>
       </div>
     </div>
