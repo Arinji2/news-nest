@@ -37,9 +37,9 @@ function LoginModal({
           active ? "scale-100 translate-y-0 " : "scale-50 translate-y-40 "
         }w-[90%] md:w-[700px] flex flex-col items-center justify-center gap-8 p-3 h-[400px] rounded-md bg-black ease-menu-ease duration-500 transition-all delay-300`}
       >
-        <GoogleLogin />
-        <GithubLogin />
-        <DiscordLogin />
+        <GoogleLogin setter={setActive} />
+        <GithubLogin setter={setActive} />
+        <DiscordLogin setter={setActive} />
       </div>
     </div>
   );

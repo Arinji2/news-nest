@@ -1,14 +1,12 @@
 "use client";
 
 import WidthWrapper from "@/components/WidthWrapper";
-import Button from "@/components/button";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import PcNavbar from "./pcNavbar";
-import MobNavbar from "./mobNavbar";
 import { cn } from "@/utils/cn";
+import { useEffect, useState } from "react";
+import MobNavbar from "./mobNavbar";
+import PcNavbar from "./pcNavbar";
 
-export default function Navbar() {
+export default function Navbar({ isLoggedIn }: { isLoggedIn: boolean }) {
   const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
@@ -16,7 +14,6 @@ export default function Navbar() {
     window.onscroll = function () {
       let currentScrollPos = window.scrollY;
       if (currentScrollPos < 100) return;
-      //show navbar at end of page
 
       if (
         window.innerHeight + Math.round(window.scrollY) + 1 >=
@@ -39,8 +36,8 @@ export default function Navbar() {
       )}
     >
       <WidthWrapper color="#" transparent>
-        <PcNavbar />
-        <MobNavbar />
+        <PcNavbar isLoggedIn={isLoggedIn} />
+        <MobNavbar isLoggedIn={isLoggedIn} />
       </WidthWrapper>
     </nav>
   );

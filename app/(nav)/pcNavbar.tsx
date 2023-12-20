@@ -1,9 +1,11 @@
+"use client";
+
 import Button from "@/components/button";
 import Image from "next/image";
 import Link from "next/link";
 import { LoginButton } from "./buttons";
 
-export default function PcNavbar() {
+export default function PcNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
   return (
     <div className=" xl:flex hidden   flex-row items-center justify-center gap-2 w-full h-full">
       <Image width={172} height={95} src="/logo.svg" alt="Logo Image"></Image>
@@ -21,7 +23,7 @@ export default function PcNavbar() {
         </p>
       </div>
       <div className="w-fit h-full shrink-0 gap-3 flex flex-row items-center justify-center">
-        <LoginButton />
+        {isLoggedIn ? <Button textOnly>DASHBOARD</Button> : <LoginButton />}
         <Button>GET STARTED</Button>
       </div>
     </div>

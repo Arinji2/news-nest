@@ -2,11 +2,13 @@
 import Button from "@/components/button";
 import { AppendCookie } from "@/utils/cookieHelpers";
 import { InitPocketbase } from "@/utils/pocketbase";
+import { revalidateHelperTag } from "@/utils/revalidateLocalTag";
 import { SiDiscord, SiGithub, SiGoogle } from "@icons-pack/react-simple-icons";
+import { revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-export function GoogleLogin() {
+export function GoogleLogin({ setter }: { setter: Function }) {
   const router = useRouter();
   return (
     <Button
@@ -19,9 +21,12 @@ export function GoogleLogin() {
           const res = await pb.collection("users").authRefresh();
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
-
+          setter(false);
+          revalidateHelperTag("loginUpdate");
+          router.refresh();
           router.push("/dashboard");
         } catch (e) {
+          console.log(e);
           toast.error("Login failed!");
         }
       }}
@@ -31,7 +36,7 @@ export function GoogleLogin() {
     </Button>
   );
 }
-export function GithubLogin() {
+export function GithubLogin({ setter }: { setter: Function }) {
   const router = useRouter();
   return (
     <Button
@@ -44,9 +49,12 @@ export function GithubLogin() {
           const res = await pb.collection("users").authRefresh();
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
-
+          setter(false);
+          revalidateHelperTag("loginUpdate");
+          router.refresh();
           router.push("/dashboard");
         } catch (e) {
+          console.log(e);
           toast.error("Login failed!");
         }
       }}
@@ -56,7 +64,7 @@ export function GithubLogin() {
     </Button>
   );
 }
-export function DiscordLogin() {
+export function DiscordLogin({ setter }: { setter: Function }) {
   const router = useRouter();
   return (
     <Button
@@ -69,9 +77,12 @@ export function DiscordLogin() {
           const res = await pb.collection("users").authRefresh();
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
-
+          setter(false);
+          revalidateHelperTag("loginUpdate");
+          router.refresh();
           router.push("/dashboard");
         } catch (e) {
+          console.log(e);
           toast.error("Login failed!");
         }
       }}

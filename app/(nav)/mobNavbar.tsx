@@ -4,18 +4,28 @@ import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { LoginButton } from "./buttons";
 
-export default function MobNavbar() {
+export default function MobNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
   const [active, setActive] = useState(false);
+  const [prevState, setPrevState] = useState<0 | 1 | 2>(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
   }, [active]);
+
+  useEffect(() => {
+    if (prevState === 0) setPrevState(isLoggedIn ? 1 : 2);
+    if (prevState === 2 && isLoggedIn) {
+      setPrevState(1);
+      setActive(false);
+    }
+  }, [isLoggedIn]);
 
   return (
     <>
@@ -75,7 +85,7 @@ export default function MobNavbar() {
             </p>
           </div>
           <div className="w-full h-fit mt-auto gap-3 flex flex-row items-center justify-start">
-            <Button textOnly>LOGIN</Button>
+            {isLoggedIn ? <Button textOnly>DASHBOARD</Button> : <LoginButton />}
             <Button>GET STARTED</Button>
           </div>
         </div>
