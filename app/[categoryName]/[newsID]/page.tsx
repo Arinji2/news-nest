@@ -1,11 +1,13 @@
 import WidthWrapper from "@/components/WidthWrapper";
 import Button from "@/components/button";
 import { InitPocketbase } from "@/utils/pocketbase";
-import { NewsItemSchema } from "@/utils/schemas";
-import { NewsItemType } from "@/utils/types";
+import { NewsItemSchema, SavedItemSchema } from "@/utils/schemas";
+import { NewsItemType, SavedItemType } from "@/utils/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Related from "./related";
+import { cookies } from "next/headers";
+import SaveButton from "./saveButton";
 
 export default async function Page({
   params,
@@ -14,6 +16,7 @@ export default async function Page({
 }) {
   if (!params.categoryName || !params.newsID) notFound();
   let articleData = {} as NewsItemType;
+  let savedData = {} as SavedItemType;
   const pb = InitPocketbase();
   try {
     const data = await pb.collection(params.categoryName).getOne(params.newsID);
@@ -26,6 +29,23 @@ export default async function Page({
     const date = new Date(articleData.publishedAt);
     return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
   };
+
+  const hasCookie = cookies().get("token")?.value;
+  if (hasCookie) {
+    try {
+      pb.authStore.save(hasCookie);
+      await pb.collection("users").authRefresh();
+      const savedRawData = await pb
+        .collection("saved")
+        .getFirstListItem(
+          `savedBy = "${pb.authStore.model?.id}" && articleID = "${articleData.id}"`
+        );
+      const parsedSavedData = SavedItemSchema.safeParse(savedRawData);
+      if (parsedSavedData.success) {
+        savedData = parsedSavedData.data;
+      }
+    } catch (e) {}
+  }
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-start">
@@ -57,7 +77,11 @@ export default async function Page({
               {date()}
             </p>
             <div className="w-full h-fit flex flex-row items-center justify-start gap-5">
-              <Button inverse>SAVE ARTICLE</Button>
+              <SaveButton
+                saved={hasCookie ? (savedData ? true : false) : null}
+                articleData={articleData}
+                category={params.categoryName}
+              />
               <Button>VIEW SOURCE</Button>
             </div>
           </div>
