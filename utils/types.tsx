@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { NewsItemSchema } from "./schemas";
+import { NewsItemSchema, SavedItemSchema } from "./schemas";
 export interface Article {
   headline: string;
   image: string;
@@ -8,3 +8,4 @@ export interface Article {
 }
 
 export type NewsItemType = z.infer<typeof NewsItemSchema>;
+export type SavedItemType = z.infer<typeof SavedItemSchema>;

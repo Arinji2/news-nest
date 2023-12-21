@@ -23,7 +23,13 @@ export default function PcNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
         </p>
       </div>
       <div className="w-fit h-full shrink-0 gap-3 flex flex-row items-center justify-center">
-        {isLoggedIn ? <Button textOnly>DASHBOARD</Button> : <LoginButton />}
+        {isLoggedIn ? (
+          <Link className="w-fit h-fit" href="/dashboard">
+            <Button textOnly>DASHBOARD</Button>
+          </Link>
+        ) : (
+          <LoginButton />
+        )}
         <Button>GET STARTED</Button>
       </div>
     </div>

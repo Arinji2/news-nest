@@ -1,7 +1,7 @@
 "use client";
 
-import { NewsArticle } from "@/components/article";
-import { NewsItemType } from "@/utils/types";
+import { NewsArticle } from "@/components/article/article";
+import { NewsItemType, SavedItemType } from "@/utils/types";
 import { Loader2 } from "lucide-react";
 import * as React from "react";
 import { useState, useEffect } from "react";
@@ -11,9 +11,11 @@ import GetNextArticles from "../getNext";
 export default function Content({
   serverData,
   totalPages,
+  savedData,
 }: {
   serverData: NewsItemType[];
   totalPages: number;
+  savedData: SavedItemType[];
 }) {
   const [articles, setArticles] = useState<NewsItemType[]>(serverData);
   const { ref, inView, entry } = useInView();
@@ -40,10 +42,19 @@ export default function Content({
     <>
       <div className="w-full flex flex-row items-center justify-center gap-6 flex-wrap pb-5">
         {articles.map((item) => {
-          if (item)
+          if (item) {
+            const isSaved = savedData.find((savedItem) => {
+              return savedItem.articleID === item.id;
+            });
             return (
-              <NewsArticle category="live" key={item.id} newsProps={item} />
+              <NewsArticle
+                saved={isSaved ? true : false}
+                category="live"
+                key={item.id}
+                newsProps={item}
+              />
             );
+          }
         })}
       </div>
       {

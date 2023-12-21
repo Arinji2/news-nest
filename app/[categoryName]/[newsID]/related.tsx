@@ -1,5 +1,5 @@
 import WidthWrapper from "@/components/WidthWrapper";
-import { NewsArticle } from "@/components/article";
+import { NewsArticle } from "@/components/article/article";
 import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemsSchema } from "@/utils/schemas";
 

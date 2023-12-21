@@ -1,4 +1,4 @@
-import { HeroArticle } from "@/components/article";
+import { HeroArticle } from "@/components/article/article";
 import Button from "@/components/button";
 
 export default function Live() {

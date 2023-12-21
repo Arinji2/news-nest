@@ -17,3 +17,12 @@ export const NewsItemSchema = z.object({
 });
 
 export const NewsItemsSchema = z.array(NewsItemSchema);
+
+export const SavedItemSchema = z.object({
+  id: z.string(),
+  articleID: z.string(),
+  articleCategory: z.string(),
+  created: z.string().transform(parseDateString),
+});
+
+export const SavedItemsSchema = z.array(SavedItemSchema);

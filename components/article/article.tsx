@@ -1,9 +1,11 @@
+"use client";
 import { cn } from "@/utils/cn";
 import { NewsItemType } from "@/utils/types";
-import { ClassArray } from "clsx";
-import { FolderPlus, HelpCircle, Info, MessageCircleIcon } from "lucide-react";
+import { HelpCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import SaveButton from "./saveButton";
 
 export function HeroArticle({
   link,
@@ -54,14 +56,18 @@ export function NewsArticle({
   hideIcons,
   category,
   link,
+  saved,
 }: {
   newsProps: NewsItemType;
   hideIcons?: boolean;
   className?: React.HTMLAttributes<HTMLAnchorElement>["className"];
   link?: string;
+  saved?: boolean;
 
   category: string;
 }) {
+  const [savedState, setSavedState] = useState(saved ?? false);
+
   return (
     <div className="w-fit h-fit relative">
       <div
@@ -73,7 +79,12 @@ export function NewsArticle({
           }
         )}
       >
-        <FolderPlus className="w-6 h-6 text-accent" />
+        <SaveButton
+          setSaved={setSavedState}
+          saved={savedState}
+          article={newsProps}
+          category={category}
+        />
         <Link href={`/${category}/${newsProps.id}`} target="_blank">
           <HelpCircle className="w-6 h-6 text-accent" />
         </Link>
@@ -105,6 +116,16 @@ export function NewsArticle({
           </div>
         </article>
       </Link>
+    </div>
+  );
+}
+
+export function NewsArticleLoader() {
+  return (
+    <div className="w-fit h-fit relative">
+      <article className="w-full md:w-[325px] h-[70svh] md:h-[600px]  rounded-lg overflow-hidden group bg-black flex flex-col relative items-center justify-center">
+        <Loader2 className="w-[200px] h-[200px] animate-spin text-secondary" />
+      </article>
     </div>
   );
 }
