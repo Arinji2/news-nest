@@ -26,6 +26,7 @@ export default async function RootLayout({
     ["cacheKey"],
     {
       tags: ["loginUpdate"],
+      revalidate: 1,
     }
   )();
   return (

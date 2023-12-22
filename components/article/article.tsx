@@ -89,7 +89,11 @@ export function NewsArticle({
           <HelpCircle className="w-6 h-6 text-accent" />
         </Link>
       </div>
-      <Link href={link ? link : newsProps.url} className="w-fit h-fit">
+      <Link
+        href={link ? link : newsProps.url}
+        target="_blank"
+        className="w-fit h-fit"
+      >
         <article
           className={cn(
             "w-full md:w-[325px] h-[70svh] md:h-[600px] shrink-0  rounded-lg overflow-hidden group bg-background flex flex-col relative items-center justify-end",

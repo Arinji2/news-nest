@@ -1,10 +1,12 @@
 export const dynamic = "force-dynamic";
 import WidthWrapper from "@/components/WidthWrapper";
 import { NewsArticle, NewsArticleLoader } from "@/components/article/article";
+import Button from "@/components/button";
 import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemSchema, SavedItemsSchema } from "@/utils/schemas";
 import { SavedItemType } from "@/utils/types";
 import { cookies } from "next/headers";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -32,6 +34,18 @@ export default async function Page() {
     <div className="w-full min-h-page flex flex-col items-center justify-start">
       <h1>Dashboard</h1>
       <WidthWrapper color="#" transparent>
+        {parsedSavedData.data.length === 0 && (
+          <div className="w-full h-full flex flex-col items-center justify-center">
+            <h1 className="text-h2 text-secondary font-bold">
+              No Saved Articles!
+            </h1>
+            <Link href="/live" className="w-fit h-fit">
+              <Button textOnly className="text-lg text-gray-500">
+                Save articles to read them later
+              </Button>
+            </Link>
+          </div>
+        )}
         <div className="w-full flex flex-row items-center justify-center gap-6 flex-wrap pb-5">
           {parsedSavedData.data.map((article) => {
             return (
@@ -65,6 +79,7 @@ async function DashboardArticle({
 
   return (
     <NewsArticle
+      saved={true}
       newsProps={parsedData.data}
       category={articleData.articleCategory}
     />
