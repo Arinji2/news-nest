@@ -22,8 +22,7 @@ export default function SaveButton({
   const [savedState, setSavedState] = useState(saved ?? false);
   const { toggleModal } = useLoginModal();
   return (
-    <button
-      className="w-fit h-fit"
+    <Button
       onClick={async () => {
         setLoading(true);
         const res = await HasCookie("token");
@@ -58,19 +57,16 @@ export default function SaveButton({
           return;
         }
       }}
+      inverse
+      className="w-[165px] h-[52px] flex flex-col items-center justify-center"
     >
-      <Button
-        inverse
-        className="w-[165px] h-[52px] flex flex-col items-center justify-center"
-      >
-        {loading ? (
-          <Loader2 className="animate-spin" />
-        ) : savedState ? (
-          "DELETE ARTICLE"
-        ) : (
-          "SAVE ARTICLE"
-        )}
-      </Button>
-    </button>
+      {loading ? (
+        <Loader2 className="animate-spin" />
+      ) : savedState ? (
+        "DELETE ARTICLE"
+      ) : (
+        "SAVE ARTICLE"
+      )}
+    </Button>
   );
 }
