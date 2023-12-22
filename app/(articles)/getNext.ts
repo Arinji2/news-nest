@@ -10,7 +10,9 @@ export default async function GetNextArticles(
   const pb = InitPocketbase();
   if (currentPage > totalPages) return;
 
-  const data = await pb.collection(category).getList(currentPage, 5);
+  const data = await pb.collection(category).getList(currentPage, 5, {
+    sort: "-created",
+  });
 
   const parsedData = data.items.map((item) => {
     return NewsItemSchema.parse(item);

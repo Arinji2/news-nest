@@ -22,7 +22,9 @@ export default async function Page() {
     } catch (e) {}
   }
   const pb = InitPocketbase();
-  const data = await pb.collection("live").getList(1, 5);
+  const data = await pb.collection("live").getList(1, 5, {
+    sort: "-created",
+  });
 
   const totalPages = data.totalPages;
 
