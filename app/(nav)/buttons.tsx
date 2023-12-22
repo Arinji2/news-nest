@@ -8,7 +8,7 @@ export function LoginButton() {
   return (
     <Button
       onClick={async () => {
-        toggleModal();
+        toggleModal(true);
       }}
       textOnly
     >

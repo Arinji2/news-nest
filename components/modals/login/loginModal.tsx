@@ -9,9 +9,11 @@ import { DiscordLogin, GithubLogin, GoogleLogin } from "./buttons";
 function LoginModal({
   setActive,
   active,
+  loginToDash,
 }: {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
   active: boolean;
+  loginToDash: boolean;
 }) {
   const modal = useRef<HTMLDivElement>(null);
   const closeOpenMenus = (e: any) => {
@@ -37,9 +39,9 @@ function LoginModal({
           active ? "scale-100 translate-y-0 " : "scale-50 translate-y-40 "
         }w-[90%] md:w-[700px] flex flex-col items-center justify-center gap-8 p-3 h-[400px] rounded-md bg-black ease-menu-ease duration-500 transition-all delay-300`}
       >
-        <GoogleLogin setter={setActive} />
-        <GithubLogin setter={setActive} />
-        <DiscordLogin setter={setActive} />
+        <GoogleLogin loginToDash={loginToDash} setter={setActive} />
+        <GithubLogin loginToDash={loginToDash} setter={setActive} />
+        <DiscordLogin loginToDash={loginToDash} setter={setActive} />
       </div>
     </div>
   );
@@ -48,9 +50,11 @@ function LoginModal({
 export function LoginModalPortal({
   defaultActive,
   setDefaultActive,
+  loginToDash,
 }: {
   defaultActive: boolean;
   setDefaultActive: React.Dispatch<React.SetStateAction<boolean>>;
+  loginToDash: boolean;
 }) {
   const [loaded, setLoaded] = useState(false);
   const [active, setActive] = useState(defaultActive);
@@ -69,9 +73,14 @@ export function LoginModalPortal({
       }
     }
   }, [active, setDefaultActive]);
+
   return loaded
     ? createPortal(
-        <LoginModal setActive={setActive} active={active} />,
+        <LoginModal
+          loginToDash={loginToDash}
+          setActive={setActive}
+          active={active}
+        />,
         document.body
       )
     : null;

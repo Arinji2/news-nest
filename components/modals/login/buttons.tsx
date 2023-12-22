@@ -4,11 +4,16 @@ import { AppendCookie } from "@/utils/cookieHelpers";
 import { InitPocketbase } from "@/utils/pocketbase";
 import { revalidateHelperTag } from "@/utils/revalidateLocalTag";
 import { SiDiscord, SiGithub, SiGoogle } from "@icons-pack/react-simple-icons";
-import { revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-export function GoogleLogin({ setter }: { setter: Function }) {
+export function GoogleLogin({
+  setter,
+  loginToDash,
+}: {
+  setter: Function;
+  loginToDash: boolean;
+}) {
   const router = useRouter();
   return (
     <Button
@@ -24,7 +29,8 @@ export function GoogleLogin({ setter }: { setter: Function }) {
           setter(false);
           revalidateHelperTag("loginUpdate");
           router.refresh();
-          router.push("/dashboard");
+
+          if (loginToDash) router.push("/dashboard");
         } catch (e) {
           console.log(e);
           toast.error("Login failed!");
@@ -36,7 +42,13 @@ export function GoogleLogin({ setter }: { setter: Function }) {
     </Button>
   );
 }
-export function GithubLogin({ setter }: { setter: Function }) {
+export function GithubLogin({
+  setter,
+  loginToDash,
+}: {
+  setter: Function;
+  loginToDash: boolean;
+}) {
   const router = useRouter();
   return (
     <Button
@@ -52,7 +64,7 @@ export function GithubLogin({ setter }: { setter: Function }) {
           setter(false);
           revalidateHelperTag("loginUpdate");
           router.refresh();
-          router.push("/dashboard");
+          if (loginToDash) router.push("/dashboard");
         } catch (e) {
           console.log(e);
           toast.error("Login failed!");
@@ -64,7 +76,13 @@ export function GithubLogin({ setter }: { setter: Function }) {
     </Button>
   );
 }
-export function DiscordLogin({ setter }: { setter: Function }) {
+export function DiscordLogin({
+  setter,
+  loginToDash,
+}: {
+  setter: Function;
+  loginToDash: boolean;
+}) {
   const router = useRouter();
   return (
     <Button
@@ -80,7 +98,7 @@ export function DiscordLogin({ setter }: { setter: Function }) {
           setter(false);
           revalidateHelperTag("loginUpdate");
           router.refresh();
-          router.push("/dashboard");
+          if (loginToDash) router.push("/dashboard");
         } catch (e) {
           console.log(e);
           toast.error("Login failed!");

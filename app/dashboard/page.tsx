@@ -7,7 +7,7 @@ import { NewsItemSchema, SavedItemsSchema } from "@/utils/schemas";
 import { SavedItemType } from "@/utils/types";
 import { cookies } from "next/headers";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Suspense } from "react";
 
 export default async function Page() {
@@ -20,7 +20,7 @@ export default async function Page() {
     const locUser = await pb.collection("users").authRefresh();
     user = locUser;
   } catch (e) {
-    notFound();
+    redirect("/");
   }
 
   const savedData = await pb.collection("saved").getFullList({
@@ -28,7 +28,7 @@ export default async function Page() {
   });
 
   const parsedSavedData = SavedItemsSchema.safeParse(savedData);
-  if (!parsedSavedData.success) notFound();
+  if (!parsedSavedData.success) redirect("/");
 
   return (
     <div className="w-full min-h-page flex flex-col items-center justify-start">
