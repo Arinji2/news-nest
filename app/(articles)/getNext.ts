@@ -1,17 +1,18 @@
 "use server";
 import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemSchema } from "@/utils/schemas";
-import Pocketbase from "pocketbase";
 export default async function GetNextArticles(
   currentPage: number,
   totalPages: number,
-  category: string
+  category: string,
+  filter?: string
 ) {
   const pb = InitPocketbase();
   if (currentPage > totalPages) return;
 
   const data = await pb.collection(category).getList(currentPage, 5, {
     sort: "-created",
+    filter: filter ? `category = "${filter}"` : undefined,
   });
 
   const parsedData = data.items.map((item) => {

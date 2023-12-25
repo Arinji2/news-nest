@@ -77,9 +77,11 @@ export default function MobNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
                 LIVE<span className="text-accent">.</span>
               </p>
             </Link>
-            <p className="text-text text-h2">
-              DISCOVER<span className="text-accent">.</span>
-            </p>
+            <Link href="/discover" className="w-fit h-fit">
+              <p className="text-text text-h2">
+                DISCOVER<span className="text-accent">.</span>
+              </p>
+            </Link>
             <p className="text-text text-h2">
               EXPLORE<span className="text-accent">.</span>
             </p>

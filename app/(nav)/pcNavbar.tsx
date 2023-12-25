@@ -8,16 +8,20 @@ import { LoginButton } from "./buttons";
 export default function PcNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
   return (
     <div className=" xl:flex hidden   flex-row items-center justify-center gap-2 w-full h-full">
-      <Image width={172} height={95} src="/logo.svg" alt="Logo Image"></Image>
+      <Link className="w-fit h-fit" href="/">
+        <Image width={172} height={95} src="/logo.svg" alt="Logo Image" />
+      </Link>
       <div className="w-full h-full flex flex-row items-center justify-center gap-[50px]">
         <Link href="/live" className="w-fit h-fit">
           <p className="text-text  text-h3">
             LIVE<span className="text-accent">.</span>
           </p>
         </Link>
-        <p className="text-text  text-h3">
-          DISCOVER<span className="text-accent">.</span>
-        </p>
+        <Link href="/discover" className="w-fit h-fit">
+          <p className="text-text  text-h3">
+            DISCOVER<span className="text-accent">.</span>
+          </p>
+        </Link>
         <p className="text-text  text-h3">
           EXPLORE<span className="text-accent">.</span>
         </p>
