@@ -21,28 +21,28 @@ export default function Discover({ page }: { page?: boolean }) {
         </div>
         <div className="w-full  h-fit flex group/parent flex-row items-center justify-start gap-4 rounded-lg  overflow-hidden py-4 ">
           <div className=" flex flex-row  group-hover/parent:pause animate-infinite-scroll items-center justify-start  gap-4">
-            <Card name="Sports" image="/home/discover-1.png" />
-            <Card name="Tech" image="/home/discover-2.png" />
-            <Card name="Science" image="/home/discover-3.png" />
-            <Card name="Comedy" image="/home/discover-4.png" />
+            <Card name="Sports" image="/home/discover-1.webp" />
+            <Card name="Tech" image="/home/discover-2.webp" />
+            <Card name="Science" image="/home/discover-3.webp" />
+            <Card name="Comedy" image="/home/discover-4.webp" />
             <Card
               name="Business"
               display="Money"
-              image="/home/discover-5.png"
+              image="/home/discover-5.webp"
             />
           </div>
           <div
             aria-hidden={true}
             className=" no-scrollbar flex flex-row group-hover/parent:pause  animate-infinite-scroll items-center justify-start  gap-4"
           >
-            <Card name="Sports" image="/home/discover-1.png" />
-            <Card name="Tech" image="/home/discover-2.png" />
-            <Card name="Science" image="/home/discover-3.png" />
-            <Card name="Comedy" image="/home/discover-4.png" />
+            <Card name="Sports" image="/home/discover-1.webp" />
+            <Card name="Tech" image="/home/discover-2.webp" />
+            <Card name="Science" image="/home/discover-3.webp" />
+            <Card name="Comedy" image="/home/discover-4.webp" />
             <Card
               name="Business"
               display="Money"
-              image="/home/discover-5.png"
+              image="/home/discover-5.webp"
             />
           </div>
         </div>

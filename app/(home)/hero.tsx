@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -20,11 +21,13 @@ export default function Hero() {
           <h4 className="text-text text-opacity-50 text-subtitle text-center xl:text-left">
             Your latest news on your fingertips.
           </h4>
-          <Button>START EXPLORING</Button>
+          <Link href="/live" className="w-fit h-fit">
+            <Button>START EXPLORING</Button>
+          </Link>
         </div>
         <div className="xl:w-[800px] max-w-[500px] w-full  xl:max-h-none max-h-[350px] xl:aspect-auto aspect-[3/4] relative  xl:h-full h-fit flex flex-col items-center justify-start xl:justify-center">
           <Image
-            src="/home/hero.png"
+            src="/home/hero.webp"
             fill
             priority
             sizes="(min-width: 1280px) 800px, 500px"

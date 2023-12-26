@@ -22,9 +22,11 @@ export default function PcNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
             DISCOVER<span className="text-accent">.</span>
           </p>
         </Link>
-        <p className="text-text  text-h3">
-          EXPLORE<span className="text-accent">.</span>
-        </p>
+        <Link href="/explore" className="w-fit h-fit">
+          <p className="text-text  text-h3">
+            EXPLORE<span className="text-accent">.</span>
+          </p>
+        </Link>
       </div>
       <div className="w-fit h-full shrink-0 gap-3 flex flex-row items-center justify-center">
         {isLoggedIn ? (

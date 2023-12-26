@@ -1,11 +1,13 @@
 import Button from "@/components/button";
+import { getCountryCode } from "@/utils/helperFunctions";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Explore() {
   return (
     <section className="w-full h-full xl:h-fit  py-10 flex flex-col overflow-hidden items-center justify-center relative">
       <Image
-        src="/home/explore.png"
+        src="/home/explore.webp"
         fill
         alt="Map"
         className="absolute top-0 left-0 object-contain"
@@ -23,7 +25,9 @@ export default function Explore() {
             Explore countries and their{" "}
             <br className="xl:inline-block hidden" /> worlds.
           </h3>
-          <Button>VIEW MORE</Button>
+          <Link href="/explore" className="w-fit h-fit">
+            <Button>VIEW MORE</Button>
+          </Link>
         </div>
       </div>
     </section>
@@ -56,7 +60,12 @@ function Card({
             <span className="text-accent">{unit}</span>
           </p>
         </div>
-        <Button inverse>EXPLORE</Button>
+        <Link
+          href={`/explore/${getCountryCode(name.toUpperCase())}`}
+          className="w-fit h-fit"
+        >
+          <Button inverse>EXPLORE</Button>
+        </Link>
       </div>
     </article>
   );

@@ -22,17 +22,25 @@ export const getPrevDate = () => {
 
 export const getCountryCode = (country: string) => {
   var code = "in";
-  if (country === "India") code = "in";
-  else if (country === "Australia") code = "au";
-  else if (country === "Belgium") code = "be";
-  else if (country === "France") code = "fr";
-  else if (country === "Germany") code = "de";
-  else if (country === "Japan") code = "jp";
-  else if (country === "New-Zealand") code = "nz";
-  else if (country === "Serbia") code = "rs";
-  else if (country === "United-Kingdom") code = "gb";
-  else if (country === "United-States") code = "us";
+  if (country === "INDIA") code = "in";
+  else if (country === "USA") code = "us";
+  else if (country === "CHINA") code = "cn";
+  else if (country === "CANADA") code = "ca";
+  else if (country === "RUSSIA") code = "ru";
+  else if (country === "SOUTH AFRICA") code = "sa";
   return code;
+};
+
+export const getCountry = (code: string) => {
+  var country;
+  if (code === "in") country = "INDIA";
+  else if (code === "us") country = "USA";
+  else if (code === "cn") country = "CHINA";
+  else if (code === "ca") country = "CANADA";
+  else if (code === "ru") country = "RUSSIA";
+  else if (code === "sa") country = "SOUTH AFRICA";
+  else country = null;
+  return country;
 };
 
 export const getLanguageCode = (language: string) => {

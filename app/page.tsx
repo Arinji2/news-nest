@@ -32,7 +32,7 @@ export default async function Home() {
 
         <div className="w-full h-page relative">
           <Image
-            src="/home/footer.png"
+            src="/home/footer.webp"
             fill
             className="object-cover absolute object-center "
             alt="Fighter Plane taking off"

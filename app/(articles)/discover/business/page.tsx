@@ -4,6 +4,7 @@ import { NewsItemSchema, SavedItemsSchema } from "@/utils/schemas";
 import Content from "./contents";
 import { cookies } from "next/headers";
 import { SavedItemType } from "@/utils/types";
+import NoResults from "../../noResults";
 export default async function Page() {
   const isLoggedIn = cookies().get("token")?.value;
   const allSavedArticles: SavedItemType[] = [];
@@ -37,6 +38,7 @@ export default async function Page() {
     <div className="w-full min-h-page flex flex-col items-center justify-start">
       <h1 className="text-mobileH1  xl:text-h1 text-primary">BUSINESS NEWS</h1>
       <WidthWrapper color="#" transparent>
+        {parsedData.length === 0 && <NoResults />}
         <div className="w-full h-full flex flex-col items-center justify-center pb-4">
           <Content
             savedData={allSavedArticles}

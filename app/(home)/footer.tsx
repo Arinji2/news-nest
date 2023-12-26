@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/components/button";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -11,7 +12,9 @@ export default function Footer() {
         <h3 className="text-subtitle text-text text-center">
           Live. Discover. Explore.
         </h3>
-        <Button>GET STARTED</Button>
+        <Link href="/live" className="w-fit h-fit">
+          <Button>GET STARTED</Button>
+        </Link>
       </div>
     </section>
   );

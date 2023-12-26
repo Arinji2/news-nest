@@ -14,7 +14,7 @@ export default function Live() {
         </div>
         <div className="w-full h-fit flex flex-row items-center justify-center gap-x-0  md:gap-x-4 gap-4">
           <HeroArticle
-            image="/home/live-1.png"
+            image="/home/live-1.webp"
             title="SpaceX poised for second launch of mega Starship Rocket"
             source="The Economic Times"
             link="https://economictimes.indiatimes.com/news/science/spacex-poised-for-second-launch-of-mega-starship-rocket/articleshow/105303222.cms"
@@ -22,7 +22,7 @@ export default function Live() {
 
           <HeroArticle
             className={"md:flex hidden"}
-            image="/home/live-2.png"
+            image="/home/live-2.webp"
             title='Biden says Israel "starting to lose support"'
             source="Aljazeera"
             link="https://www.aljazeera.com/news/liveblog/2023/12/12/israel-hamas-war-live-palestinians-going-hungry-as-israel-pounds-gaza"

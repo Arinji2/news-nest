@@ -25,7 +25,7 @@ export default function MobNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
       setPrevState(1);
       setActive(false);
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, prevState]);
 
   return (
     <>
@@ -82,9 +82,11 @@ export default function MobNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
                 DISCOVER<span className="text-accent">.</span>
               </p>
             </Link>
-            <p className="text-text text-h2">
-              EXPLORE<span className="text-accent">.</span>
-            </p>
+            <Link href="/explore" className="w-fit h-fit">
+              <p className="text-text text-h2">
+                EXPLORE<span className="text-accent">.</span>
+              </p>
+            </Link>
           </div>
           <div className="w-full h-fit mt-auto gap-3 flex flex-row items-center justify-start">
             {isLoggedIn ? <Button textOnly>DASHBOARD</Button> : <LoginButton />}
