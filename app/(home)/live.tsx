@@ -1,5 +1,6 @@
 import { HeroArticle } from "@/components/article/article";
 import Button from "@/components/button";
+import Link from "next/link";
 
 export default function Live() {
   return (
@@ -10,7 +11,9 @@ export default function Live() {
           <h3 className="text-subtitle text-text xl:text-left text-center">
             View the most recent news articles, <br /> worldwide
           </h3>
-          <Button>VIEW MORE</Button>
+          <Link href="/live" className="w-fit h-fit">
+            <Button>VIEW MORE</Button>
+          </Link>
         </div>
         <div className="w-full h-fit flex flex-row items-center justify-center gap-x-0  md:gap-x-4 gap-4">
           <HeroArticle
