@@ -15,6 +15,9 @@ export default function Discover({ page }: { page?: boolean }) {
           <h3 className="text-subtitle text-text text-left">
             Enhance your choices by discovering new news sources
           </h3>
+          <Link href="/discover">
+            <Button inverse>VIEW MORE</Button>
+          </Link>
         </div>
         <div className="w-full  h-fit flex group/parent flex-row items-center justify-start gap-4 rounded-lg  overflow-hidden py-4 ">
           <div className=" flex flex-row  group-hover/parent:pause animate-infinite-scroll items-center justify-start  gap-4">
