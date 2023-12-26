@@ -12,7 +12,7 @@ export default async function GetNextArticles(
 
   const data = await pb.collection(category).getList(currentPage, 5, {
     sort: "-created",
-    filter: filter ? `category = "${filter}"` : undefined,
+    filter: filter ? `category = "${filter}"` : "",
   });
 
   const parsedData = data.items.map((item) => {
