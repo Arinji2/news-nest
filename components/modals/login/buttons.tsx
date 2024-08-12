@@ -2,8 +2,8 @@
 import Button from "@/components/button";
 import { AppendCookie } from "@/utils/cookieHelpers";
 import { InitPocketbase } from "@/utils/pocketbase";
-import { revalidateHelperTag } from "@/utils/revalidateLocalTag";
 import { SiDiscord, SiGithub, SiGoogle } from "@icons-pack/react-simple-icons";
+import { revalidatePath } from "next/cache";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -27,7 +27,7 @@ export function GoogleLogin({
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
           setter(false);
-          revalidateHelperTag("loginUpdate");
+          revalidatePath("/", "layout");
           router.refresh();
 
           if (loginToDash) router.push("/dashboard");
@@ -62,7 +62,7 @@ export function GithubLogin({
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
           setter(false);
-          revalidateHelperTag("loginUpdate");
+          revalidatePath("/", "layout");
           router.refresh();
           if (loginToDash) router.push("/dashboard");
         } catch (e) {
@@ -96,7 +96,7 @@ export function DiscordLogin({
           await AppendCookie("token", res.token);
           toast.success("Logged in successfully!");
           setter(false);
-          revalidateHelperTag("loginUpdate");
+          revalidatePath("/", "layout");
           router.refresh();
           if (loginToDash) router.push("/dashboard");
         } catch (e) {

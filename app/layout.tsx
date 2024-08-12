@@ -1,11 +1,10 @@
+import { LoginContext } from "@/components/modals/login/loginContext";
 import { Work_Sans } from "next/font/google";
+import { cookies } from "next/headers";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./(nav)/navbar";
 import "./globals.css";
-import { LoginContext } from "@/components/modals/login/loginContext";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { unstable_cache } from "next/cache";
-import { cookies } from "next/headers";
 
 const work_Sans = Work_Sans({
   subsets: ["latin"],
@@ -17,18 +16,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isLoggedIn = await unstable_cache(
-    async () => {
-      const res = cookies().has("token");
-      return res;
-    },
-
-    ["cacheKey"],
-    {
-      tags: ["loginUpdate"],
-      revalidate: 1,
-    }
-  )();
+  const tokenCookie = cookies().has("token");
+  const isLoggedIn = tokenCookie ? true : false;
   return (
     <html lang="en" className="bg-background">
       <body className={work_Sans.className}>
