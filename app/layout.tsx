@@ -1,10 +1,9 @@
 import { LoginContext } from "@/components/modals/login/loginContext";
 import { Work_Sans } from "next/font/google";
-import { cookies } from "next/headers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./(nav)/navbar";
 import "./globals.css";
+import Navbar from "./navbar";
 
 const work_Sans = Work_Sans({
   subsets: ["latin"],
@@ -16,8 +15,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const tokenCookie = cookies().has("token");
-  const isLoggedIn = tokenCookie ? true : false;
   return (
     <html lang="en" className="bg-background">
       <body className={work_Sans.className}>
@@ -30,10 +27,8 @@ export default async function RootLayout({
           closeOnClick
           theme="dark"
         />
-
         <LoginContext>
-          <Navbar isLoggedIn={isLoggedIn} />
-
+          <Navbar />
           {children}
         </LoginContext>
       </body>

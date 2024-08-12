@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import MobNavbar from "./mobNavbar";
 import PcNavbar from "./pcNavbar";
 
-export default function Navbar({ isLoggedIn }: { isLoggedIn: boolean }) {
+export default function NavbarClient({ isLoggedIn }: { isLoggedIn: boolean }) {
   const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
