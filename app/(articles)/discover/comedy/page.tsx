@@ -1,10 +1,10 @@
 import WidthWrapper from "@/components/WidthWrapper";
 import { InitPocketbase } from "@/utils/pocketbase";
 import { NewsItemSchema, SavedItemsSchema } from "@/utils/schemas";
-import Content from "./contents";
-import { cookies } from "next/headers";
 import { SavedItemType } from "@/utils/types";
+import { cookies } from "next/headers";
 import NoResults from "../../noResults";
+import Content from "./contents";
 export default async function Page() {
   const isLoggedIn = cookies().get("token")?.value;
   const allSavedArticles: SavedItemType[] = [];
@@ -24,7 +24,7 @@ export default async function Page() {
   }
   const pb = InitPocketbase();
   const data = await pb.collection("category").getList(1, 5, {
-    filter: `category = "comedy"`,
+    filter: `category = 'entertainment'`,
     sort: "-created",
   });
 
