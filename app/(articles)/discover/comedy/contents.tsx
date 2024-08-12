@@ -3,8 +3,7 @@
 import { NewsArticle } from "@/components/article/article";
 import { NewsItemType, SavedItemType } from "@/utils/types";
 import { Loader2 } from "lucide-react";
-import * as React from "react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import GetNextArticles from "../../getNext";
 
@@ -26,16 +25,18 @@ export default function Content({
   useEffect(() => {
     if (loading || !inView) return;
     setLoading(true);
-    GetNextArticles(page + 1, totalPages, "category", "comedy").then((res) => {
-      if (!res) {
-        setEnd(true);
-        return;
-      }
+    GetNextArticles(page + 1, totalPages, "category", "entertainment").then(
+      (res) => {
+        if (!res) {
+          setEnd(true);
+          return;
+        }
 
-      setArticles((prev) => [...prev, ...res]);
-      setLoading(false);
-      setPage((prev) => prev + 1);
-    });
+        setArticles((prev) => [...prev, ...res]);
+        setLoading(false);
+        setPage((prev) => prev + 1);
+      }
+    );
   }, [inView, loading, page, totalPages]);
 
   return (
