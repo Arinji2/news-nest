@@ -1,10 +1,12 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { NewsItemType } from "@/utils/types";
+import useImage from "@/utils/useImage";
 import { HelpCircle, Loader2 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import SaveButton from "./saveButton";
 
 export function HeroArticle({
@@ -20,21 +22,24 @@ export function HeroArticle({
   source: string;
   className?: React.HTMLAttributes<HTMLAnchorElement>["className"];
 }) {
+  const { imageProps, parentRef } = useImage();
   return (
     <Link href={link} className="w-fit h-fit">
       <article
+        ref={parentRef}
         className={cn(
           "w-[325px] h-[600px] rounded-lg overflow-hidden group bg-background flex flex-col relative items-center justify-end",
           className
         )}
       >
-        <Image
+        <LazyLoadImage
           src={image}
-          fill
           alt={title}
           sizes="600px"
-          quality={100}
-          className="absolute object-cover group-hover:scale-125 transition-all ease-in-out duration-1000 group-hover:translate-x-10"
+          width={imageProps.width}
+          height={imageProps.height}
+          className="absolute object-cover group-hover:scale-125 transition-all ease-in-out duration-1000 group-hover:translate-x-10 max-w-none h-full"
+          effect="blur"
         />
         <div className="w-full h-full absolute bg-overlay z-10"></div>
         <div className="w-full h-[120px]  px-3 flex flex-col items-start justify-center gap-2 bg-overlay z-20">
@@ -67,7 +72,7 @@ export function NewsArticle({
   category: string;
 }) {
   const [savedState, setSavedState] = useState(saved ?? false);
-
+  const { imageProps, parentRef } = useImage();
   return (
     <div className="w-fit h-fit relative">
       <div
@@ -95,19 +100,22 @@ export function NewsArticle({
         className="w-fit h-fit"
       >
         <article
+          ref={parentRef}
           className={cn(
             "w-full md:w-[325px] h-[70svh] md:h-[600px] shrink-0  rounded-lg overflow-hidden group bg-background flex flex-col relative items-center justify-end",
             className
           )}
         >
-          <Image
+          <LazyLoadImage
             src={newsProps.urlToImage ? newsProps.urlToImage : "/logo.png"}
-            fill
             alt={newsProps.title}
             sizes="600px"
-            quality={100}
-            className="absolute object-cover group-hover:scale-125 transition-all ease-in-out duration-1000 "
+            width={imageProps.width}
+            height={imageProps.height}
+            className=" object-cover max-w-none h-full"
+            effect="blur"
           />
+
           <div className="w-full h-full absolute bg-overlay z-10"></div>
 
           <div className="w-full h-[120px]  px-3 flex flex-col items-start justify-center gap-2 bg-overlay z-20">
