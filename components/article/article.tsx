@@ -38,7 +38,7 @@ export function HeroArticle({
           sizes="600px"
           width={imageProps.width}
           height={imageProps.height}
-          className="absolute object-cover group-hover:scale-125 transition-all ease-in-out duration-1000 group-hover:translate-x-10 max-w-none h-full"
+          className="absolute object-cover  max-w-none h-full"
           effect="blur"
         />
         <div className="w-full h-full absolute bg-overlay z-10"></div>
