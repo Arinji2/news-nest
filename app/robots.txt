@@ -1,0 +1,17 @@
+User-agent: *
+# Allow /
+Allow: /
+
+# Allow /live
+Allow: /live
+
+# Allow /discover and its first sub-path level
+Allow: /discover
+Allow: /discover/*
+Disallow: /discover/*/*
+
+# Allow /explore and its first sub-path level
+Allow: /explore
+Allow: /explore/*
+Disallow: /explore/*/*
+
