@@ -10,6 +10,10 @@ const work_Sans = Work_Sans({
   weight: ["400", "700", "300", "400", "100", "500", "700", "900"],
 });
 
+export const metadata = {
+  title: "News Nest",
+  description: "Discover. Explore. Stay Informed.",
+};
 export default async function RootLayout({
   children,
 }: {

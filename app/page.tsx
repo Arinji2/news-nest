@@ -1,17 +1,11 @@
 import WidthWrapper from "@/components/WidthWrapper";
-import Button from "@/components/button";
 import Image from "next/image";
 
-import Link from "next/link";
 import Hero from "./(home)/hero";
 import Live from "./(home)/live";
 import Discover from "./(home)/discover";
 import Explore from "./(home)/explore";
 import Footer from "./(home)/footer";
-export const metadata = {
-  title: "News Nest",
-  description: "Discover. Explore. Stay Informed.",
-};
 
 export default async function Home() {
   return (
