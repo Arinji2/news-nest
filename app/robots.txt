@@ -4,6 +4,7 @@ Allow: /
 
 # Allow /live
 Allow: /live
+Disallow: /live/*
 
 # Allow /discover and its first sub-path level
 Allow: /discover
