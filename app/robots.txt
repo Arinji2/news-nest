@@ -16,3 +16,8 @@ Allow: /explore
 Allow: /explore/*
 Disallow: /explore/*/*
 
+
+# Allow /category and its first sub-path level
+Allow: /category
+Allow: /category/*
+Disallow: /category/*/*
