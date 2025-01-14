@@ -41,6 +41,8 @@
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",
-    "@types/react-lazy-load-image-component": "^1.6.4"
+    "@types/react-lazy-load-image-component": "^1.6.4",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
   }
 }
