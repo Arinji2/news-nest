@@ -30,7 +30,7 @@ export default async function RootLayout({
         <link rel="canonical" href="https://news.arinji.com/" />
         <meta
           name="description"
-          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated"
+          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated."
         />
 
         <meta name="keywords" content="news, newsnest , global" />
@@ -39,7 +39,7 @@ export default async function RootLayout({
         <meta property="og:title" content="News Nest" />
         <meta
           property="og:description"
-          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated"
+          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated."
         />
         <meta
           property="og:image"
@@ -53,7 +53,7 @@ export default async function RootLayout({
         <meta name="twitter:title" content="News Nest" />
         <meta
           name="twitter:description"
-          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated"
+          content="News Nest is a news aggregator for the web. It is a free and open source and uses a local database to store articles meaning 24/7 access to top tier articles. No Paywall Required, No Account Needed, just news discovery and staying updated."
         />
         <meta
           name="twitter:image"
