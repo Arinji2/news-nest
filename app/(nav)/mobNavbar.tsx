@@ -67,7 +67,7 @@ export default function MobNavbar({ isLoggedIn }: { isLoggedIn: boolean }) {
           "fixed top-0 left-0 w-full h-[100svh]  z-[1000] flex flex-col items-center justify-end transition-all ease-[cubic-bezier(0.215, 0.61, 0.355, 1)] bg-background duration-500 will-change-transform -translate-y-full",
           {
             "translate-y-0": active,
-          }
+          },
         )}
       >
         <div className="h-[calc(100%-100px)] w-[90%] flex flex-col items-start justify-end py-5 gap-6">

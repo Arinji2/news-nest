@@ -20,7 +20,7 @@ export default function Button({
 
           "bg-transparent border-transparent hover:border-b-white hover:bg-transparent hover:text-white":
             textOnly,
-        }
+        },
       )}
       style={{ fontSize: "16px", letterSpacing: "-0.02em", fontWeight: 700 }}
       {...props}

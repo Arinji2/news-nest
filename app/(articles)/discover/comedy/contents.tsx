@@ -35,7 +35,7 @@ export default function Content({
         setArticles((prev) => [...prev, ...res]);
         setLoading(false);
         setPage((prev) => prev + 1);
-      }
+      },
     );
   }, [inView, loading, page, totalPages]);
 

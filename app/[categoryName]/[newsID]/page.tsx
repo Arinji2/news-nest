@@ -38,7 +38,7 @@ export default async function Page({
       const savedRawData = await pb
         .collection("saved")
         .getFirstListItem(
-          `savedBy = "${pb.authStore.model?.id}" && articleID = "${articleData.id}"`
+          `savedBy = "${pb.authStore.model?.id}" && articleID = "${articleData.id}"`,
         );
       const parsedSavedData = SavedItemSchema.safeParse(savedRawData);
       if (parsedSavedData.success) {

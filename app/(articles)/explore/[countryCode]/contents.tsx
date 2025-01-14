@@ -33,7 +33,7 @@ export default function Content({
       totalPages,
       "country",
       undefined,
-      countryCode
+      countryCode,
     ).then((res) => {
       if (!res) {
         setEnd(true);

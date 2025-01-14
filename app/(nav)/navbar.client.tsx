@@ -32,7 +32,7 @@ export default function NavbarClient({ isLoggedIn }: { isLoggedIn: boolean }) {
         "w-full h-[100px] sticky top-0 z-[500] overflow-hidden transition-all ease-menu-ease duration-500 bg-background border-b-2 border-secondary",
         {
           "-translate-y-full": !showNavbar,
-        }
+        },
       )}
     >
       <WidthWrapper color="#" transparent>

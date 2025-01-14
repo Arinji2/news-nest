@@ -81,7 +81,7 @@ export function LoginModalPortal({
           setActive={setActive}
           active={active}
         />,
-        document.body
+        document.body,
       )
     : null;
 }

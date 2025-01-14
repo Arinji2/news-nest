@@ -9,7 +9,7 @@ interface ModalContextProps {
 }
 
 export const ModalContext = React.createContext<ModalContextProps | undefined>(
-  undefined
+  undefined,
 );
 
 export const LoginContext = ({ children }: { children: React.ReactNode }) => {

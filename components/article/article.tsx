@@ -29,7 +29,7 @@ export function HeroArticle({
         ref={parentRef}
         className={cn(
           "w-[325px] h-[600px] rounded-lg overflow-hidden group bg-background flex flex-col relative items-center justify-end",
-          className
+          className,
         )}
       >
         <LazyLoadImage
@@ -81,7 +81,7 @@ export function NewsArticle({
           null,
           {
             hidden: hideIcons,
-          }
+          },
         )}
       >
         <SaveButton
@@ -103,7 +103,7 @@ export function NewsArticle({
           ref={parentRef}
           className={cn(
             "w-full md:w-[325px] h-[70svh] md:h-[600px] shrink-0  rounded-lg overflow-hidden group bg-background flex flex-col relative items-center justify-end",
-            className
+            className,
           )}
         >
           <LazyLoadImage

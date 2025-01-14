@@ -6,7 +6,7 @@ export default async function GetNextArticles(
   totalPages: number,
   category: string,
   filter?: string,
-  country?: string
+  country?: string,
 ) {
   const pb = InitPocketbase();
   if (currentPage > totalPages) return;
@@ -14,8 +14,8 @@ export default async function GetNextArticles(
   const filterValue = country
     ? `country = "${country}"`
     : filter
-    ? `category = "${filter}"`
-    : "";
+      ? `category = "${filter}"`
+      : "";
 
   const data = await pb.collection(category).getList(currentPage, 5, {
     sort: "-created",

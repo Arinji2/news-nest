@@ -46,7 +46,7 @@ export default function SaveButton({
           const newSavedValue = await SaveArticleAction(
             savedState ?? false,
             articleData,
-            category
+            category,
           );
           if (newSavedValue === null) toggleModal();
           else setSavedState(newSavedValue);

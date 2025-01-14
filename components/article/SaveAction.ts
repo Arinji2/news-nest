@@ -8,7 +8,7 @@ import { cookies } from "next/headers";
 export default async function SaveArticleAction(
   saved: boolean,
   article: NewsItemType,
-  category: string
+  category: string,
 ) {
   try {
     const token = cookies().get("token")?.value!;
