@@ -21,7 +21,7 @@ export default async function RootLayout({
         <link
           rel="icon"
           type="image/png"
-          href="https://cdn.arinji.com/u/23IDfU.png"
+          href="https://cdn.arinji.com/u/rj02LM.png"
           sizes="48×48"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
