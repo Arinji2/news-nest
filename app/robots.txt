@@ -19,5 +19,8 @@ Disallow: /explore/*/*
 
 # Allow /category and its first sub-path level
 Allow: /category
-Allow: /category/*
-Disallow: /category/*/*
+Disallow: /category/*
+
+# Allow /country and its first sub-path level
+Allow: /country
+Disallow: /country/*
